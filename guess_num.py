@@ -4,12 +4,18 @@
 # wrong tell user larger/lower than answer
 
 import random # 載入模組 才能產生隨機數
+start = input('Please decide random number start: ')
+start = int(start)
+end = input('Please decide random number end: ')
+end = int(end)
 
-r = random.randint(1, 100)
+#r = random.randint(1, 100)
+r = random.randint(start, end)  # replace as variables
 count = 0
 while True:
 	count += 1	# count = count + 1
-	num = input('Please guess a number within 1 to 100: ')
+	#num = input('Please guess a number within 1 to 100: ')
+	num = input('Please guess a number within %d to %d: ' %(start, end))
 	num = int(num)	# casting is important
 	if num == r:
 		print("Finally correct!")
